@@ -1,37 +1,37 @@
 import React from 'react';
-import { Heart, Star, Sparkles } from 'lucide-react';
+import { Leaf, Flame, Sparkles } from 'lucide-react';
 import { StepProps } from '../../types';
 
 const Step6Animation: React.FC<StepProps> = ({ formData, updateFormData, onNext, onBack, isFirst, isLast }) => {
   const animations = [
     {
       id: 'hearts' as const,
-      name: 'Chuva de Corações',
-      description: 'Corações flutuantes e românticos',
-      icon: Heart,
-      color: 'text-pink-500'
+      name: 'Folhas leves',
+      description: 'Folhas flutuantes para um clima natural',
+      icon: Leaf,
+      color: 'text-emerald-400'
     },
     {
       id: 'meteors' as const,
-      name: 'Meteoros',
-      description: 'Estrelas cadentes brilhantes',
-      icon: Star,
-      color: 'text-yellow-500'
+      name: 'Energia',
+      description: 'Faíscas dinâmicas para motivação',
+      icon: Flame,
+      color: 'text-orange-400'
     },
     {
       id: 'aurora' as const,
       name: 'Aurora Boreal',
-      description: 'Luzes mágicas e coloridas',
+      description: 'Luzes suaves para relaxar',
       icon: Sparkles,
-      color: 'text-blue-500'
+      color: 'text-cyan-400'
     }
   ];
 
   return (
     <div className="form-step">
-      <h1 className="text-xl font-bold text-white mb-2">Animação especial</h1>
+      <h1 className="text-xl font-bold text-white mb-2">Estilo visual</h1>
       <p className="text-gray-300 mb-6 text-sm">
-        Escolha uma animação que tornará sua página ainda mais especial.
+        Selecione um efeito visual para deixar seu plano ainda mais inspirador.
       </p>
       
       <div className="space-y-3 mb-6">
@@ -45,7 +45,7 @@ const Step6Animation: React.FC<StepProps> = ({ formData, updateFormData, onNext,
               onClick={() => updateFormData({ animation: animation.id })}
               className={`w-full p-4 rounded-lg border-2 transition-all text-left ${
                 isSelected
-                  ? 'border-pink-500 bg-pink-900/20'
+                  ? 'border-emerald-500 bg-emerald-900/20'
                   : 'border-gray-600 bg-gray-800 hover:border-gray-500'
               }`}
             >
@@ -70,7 +70,7 @@ const Step6Animation: React.FC<StepProps> = ({ formData, updateFormData, onNext,
         </button>
         <button
           onClick={onNext}
-          className="flex-1 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors text-sm"
+          className="flex-1 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm"
         >
           Próxima etapa
         </button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Heart, Star, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Leaf, Flame, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { getMiniSiteByUrl, MiniSite as MiniSiteType } from '../services/miniSiteService';
 
 const MiniSite: React.FC = () => {
@@ -33,7 +33,7 @@ const MiniSite: React.FC = () => {
     if (result.success && result.data) {
       setSite(result.data);
     } else {
-      setError('Site não encontrado');
+      setError('Plano não encontrado');
     }
     setLoading(false);
   };
@@ -62,9 +62,9 @@ const MiniSite: React.FC = () => {
         return (
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[...Array(6)].map((_, i) => (
-              <Heart
+              <Leaf
                 key={i}
-                className="absolute text-pink-500 animate-bounce"
+                className="absolute text-emerald-400 animate-bounce"
                 style={{
                   left: `${Math.random() * 90}%`,
                   top: `${Math.random() * 90}%`,
@@ -79,9 +79,9 @@ const MiniSite: React.FC = () => {
         return (
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[...Array(5)].map((_, i) => (
-              <Star
+              <Flame
                 key={i}
-                className="absolute text-yellow-400 animate-ping"
+                className="absolute text-orange-400 animate-ping"
                 style={{
                   left: `${Math.random() * 90}%`,
                   top: `${Math.random() * 90}%`,
@@ -144,8 +144,8 @@ const MiniSite: React.FC = () => {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-2">Site não encontrado</h1>
-          <p className="text-gray-400">O site que você está procurando não existe.</p>
+          <h1 className="text-2xl font-bold text-white mb-2">Plano não encontrado</h1>
+          <p className="text-gray-400">O plano que você está procurando não existe.</p>
         </div>
       </div>
     );
@@ -201,12 +201,12 @@ const MiniSite: React.FC = () => {
                 </div>
               )}
               
-              {/* Hearts overlay */}
+              {/* Overlay */}
               <div className="absolute bottom-6 left-6">
-                <Heart className="text-red-500 fill-current" size={24} />
+                <Leaf className="text-emerald-400" size={24} />
               </div>
               <div className="absolute top-6 right-6">
-                <Heart className="text-red-500 fill-current" size={20} />
+                <Leaf className="text-emerald-300" size={20} />
               </div>
             </div>
           )}
@@ -214,7 +214,7 @@ const MiniSite: React.FC = () => {
           {/* Content */}
           <div className="flex-1 p-6 space-y-6 overflow-y-auto">
             <div className="text-center">
-              <h1 className="text-2xl font-bold text-red-400 mb-2 font-serif italic">
+              <h1 className="text-2xl font-bold text-emerald-300 mb-2 font-serif italic">
                 {site.page_title}
               </h1>
               <p className="text-gray-300 text-sm">
@@ -232,7 +232,7 @@ const MiniSite: React.FC = () => {
 
             {timeDiff && (
               <div className="text-center">
-                <p className="text-white text-sm mb-4">Compartilhando momentos há</p>
+                <p className="text-white text-sm mb-4">Seguindo o plano há</p>
                 
                 <div className="grid grid-cols-3 gap-2 text-center">
                   <div className="bg-gray-700/50 rounded-lg p-3">
@@ -267,17 +267,17 @@ const MiniSite: React.FC = () => {
             )}
 
             {site.youtube_url && (
-              <div className="bg-red-600/20 rounded-lg p-3 text-center">
-                <p className="text-red-300 text-sm">🎵 Música: YouTube</p>
+              <div className="bg-emerald-600/20 rounded-lg p-3 text-center">
+                <p className="text-emerald-300 text-sm">🎧 Playlist: YouTube</p>
               </div>
             )}
 
             {site.animation && (
               <div className="text-center">
-                <p className="text-purple-300 text-sm">
-                  ✨ Animação: {
-                    site.animation === 'hearts' ? 'Chuva de Corações' :
-                    site.animation === 'meteors' ? 'Meteoros' :
+                <p className="text-cyan-200 text-sm">
+                  ✨ Estilo: {
+                    site.animation === 'hearts' ? 'Folhas leves' :
+                    site.animation === 'meteors' ? 'Energia' :
                     'Aurora Boreal'
                   }
                 </p>

@@ -38,7 +38,7 @@ const Step7Contact: React.FC<StepProps> = ({ formData, updateFormData, onNext, o
         updateFormData({ siteUrl: result.siteUrl });
         onNext();
       } else {
-        setSaveError(result.error || 'Erro ao salvar o mini site');
+        setSaveError(result.error || 'Erro ao salvar o plano');
       }
     } catch (error) {
       setSaveError('Erro interno. Tente novamente.');
@@ -51,7 +51,7 @@ const Step7Contact: React.FC<StepProps> = ({ formData, updateFormData, onNext, o
     <div className="form-step">
       <h1 className="text-xl font-bold text-white mb-2">Informações de contato</h1>
       <p className="text-gray-300 mb-6 text-sm">
-        Precisamos de suas informações para criar sua página personalizada.
+        Precisamos dos seus dados para salvar e compartilhar seu plano alimentar.
       </p>
       
       <div className="space-y-4 mb-6">
@@ -62,7 +62,7 @@ const Step7Contact: React.FC<StepProps> = ({ formData, updateFormData, onNext, o
             placeholder="Seu nome completo"
             value={formData.contact.name}
             onChange={(e) => handleContactChange('name', e.target.value)}
-            className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-pink-500 transition-colors"
+            className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-emerald-500 transition-colors"
           />
         </div>
         
@@ -73,7 +73,7 @@ const Step7Contact: React.FC<StepProps> = ({ formData, updateFormData, onNext, o
             placeholder="seu@email.com"
             value={formData.contact.email}
             onChange={(e) => handleContactChange('email', e.target.value)}
-            className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-pink-500 transition-colors"
+            className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-emerald-500 transition-colors"
           />
           {formData.contact.email && !isValidEmail(formData.contact.email) && (
             <p className="text-red-400 text-xs mt-1">Por favor, insira um email válido</p>
@@ -87,7 +87,7 @@ const Step7Contact: React.FC<StepProps> = ({ formData, updateFormData, onNext, o
             placeholder="(11) 99999-9999 (opcional)"
             value={formData.contact.phone}
             onChange={(e) => handleContactChange('phone', e.target.value)}
-            className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-pink-500 transition-colors"
+            className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-emerald-500 transition-colors"
           />
         </div>
       </div>
@@ -109,7 +109,7 @@ const Step7Contact: React.FC<StepProps> = ({ formData, updateFormData, onNext, o
         <button
           onClick={handleNext}
           disabled={!canProceed || isSaving}
-          className="flex-1 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors text-sm"
+          className="flex-1 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors text-sm"
         >
           {isSaving ? 'Salvando...' : 'Próxima etapa'}
         </button>

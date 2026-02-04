@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Star, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Leaf, Flame, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { FormData } from '../types';
 
 interface PreviewProps {
@@ -37,9 +37,9 @@ const Preview: React.FC<PreviewProps> = ({ formData }) => {
         return (
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[...Array(6)].map((_, i) => (
-              <Heart
+              <Leaf
                 key={i}
-                className="absolute text-pink-500 animate-bounce"
+                className="absolute text-emerald-400 animate-bounce"
                 style={{
                   left: `${Math.random() * 90}%`,
                   top: `${Math.random() * 90}%`,
@@ -54,9 +54,9 @@ const Preview: React.FC<PreviewProps> = ({ formData }) => {
         return (
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {[...Array(5)].map((_, i) => (
-              <Star
+              <Flame
                 key={i}
-                className="absolute text-yellow-400 animate-ping"
+                className="absolute text-orange-400 animate-ping"
                 style={{
                   left: `${Math.random() * 90}%`,
                   top: `${Math.random() * 90}%`,
@@ -174,12 +174,12 @@ const Preview: React.FC<PreviewProps> = ({ formData }) => {
               </div>
             )}
             
-            {/* Hearts overlay */}
+            {/* Overlay */}
             <div className="absolute bottom-3 left-3">
-              <Heart className="text-red-500 fill-current" size={16} />
+              <Leaf className="text-emerald-400" size={16} />
             </div>
             <div className="absolute top-3 right-3">
-              <Heart className="text-red-500 fill-current" size={14} />
+              <Leaf className="text-emerald-300" size={14} />
             </div>
           </div>
         )}
@@ -187,11 +187,11 @@ const Preview: React.FC<PreviewProps> = ({ formData }) => {
         {/* Content - Now with flexible height */}
         <div className="flex-1 p-4 space-y-3 overflow-y-auto min-h-0">
           <div className="text-center">
-            <h1 className="text-lg font-bold text-red-400 mb-1 font-serif italic">
-              {formData.pageTitle || '(visualização em tempo real)'}
+            <h1 className="text-lg font-bold text-emerald-300 mb-1 font-serif italic">
+              {formData.pageTitle || '(seu plano aparece aqui)'}
             </h1>
             <p className="text-gray-300 text-xs">
-              {formData.pageTitle ? formData.pageTitle.toLowerCase() : 'fefefefefscscs'}
+              {formData.pageTitle ? formData.pageTitle.toLowerCase() : 'personalize sua dieta com foco e consistência'}
             </p>
           </div>
 
@@ -205,7 +205,7 @@ const Preview: React.FC<PreviewProps> = ({ formData }) => {
 
           {timeDiff && (
             <div className="text-center">
-              <p className="text-white text-xs mb-3">Compartilhando momentos há</p>
+              <p className="text-white text-xs mb-3">Seguindo o plano há</p>
               
               <div className="grid grid-cols-3 gap-1 text-center">
                 <div className="bg-gray-700/50 rounded-lg p-2">
@@ -240,17 +240,17 @@ const Preview: React.FC<PreviewProps> = ({ formData }) => {
           )}
 
           {formData.youtubeUrl && (
-            <div className="bg-red-600/20 rounded-lg p-2 text-center">
-              <p className="text-red-300 text-xs">🎵 Música: YouTube</p>
+            <div className="bg-emerald-600/20 rounded-lg p-2 text-center">
+              <p className="text-emerald-300 text-xs">🎧 Playlist: YouTube</p>
             </div>
           )}
 
           {formData.animation && (
             <div className="text-center">
-              <p className="text-purple-300 text-xs">
-                ✨ Animação: {
-                  formData.animation === 'hearts' ? 'Chuva de Corações' :
-                  formData.animation === 'meteors' ? 'Meteoros' :
+              <p className="text-cyan-200 text-xs">
+                ✨ Estilo: {
+                  formData.animation === 'hearts' ? 'Folhas leves' :
+                  formData.animation === 'meteors' ? 'Energia' :
                   'Aurora Boreal'
                 }
               </p>

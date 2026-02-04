@@ -104,7 +104,7 @@ const ControleGeral: React.FC = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-white font-semibold mb-2">Detalhes do Site</h3>
+                  <h3 className="text-white font-semibold mb-2">Detalhes do Plano</h3>
                   <div className="space-y-2 text-gray-300 text-sm">
                     <p><strong>URL:</strong> {selectedSite.site_url}</p>
                     <p><strong>Criado em:</strong> {formatDate(selectedSite.created_at)}</p>
@@ -130,13 +130,13 @@ const ControleGeral: React.FC = () => {
 
                 {selectedSite.photos.length > 0 && (
                   <div>
-                    <h3 className="text-white font-semibold mb-2">Fotos ({selectedSite.photos.length})</h3>
+                    <h3 className="text-white font-semibold mb-2">Imagens ({selectedSite.photos.length})</h3>
                     <div className="grid grid-cols-3 gap-2">
                       {selectedSite.photos.slice(0, 6).map((photo, index) => (
                         <img
                           key={index}
                           src={photo}
-                          alt={`Foto ${index + 1}`}
+                          alt={`Imagem ${index + 1}`}
                           className="w-full h-16 object-cover rounded-lg"
                         />
                       ))}
@@ -162,13 +162,13 @@ const ControleGeral: React.FC = () => {
 
             <div className="mt-6 pt-6 border-t border-gray-700">
               <a
-                href={`https://heartzu.com/${selectedSite.site_url}`}
+                href={`https://nutrihub.com/${selectedSite.site_url}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition-colors"
+                className="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors"
               >
                 <ExternalLink size={16} />
-                Visualizar Site
+                Visualizar Plano
               </a>
             </div>
           </div>
@@ -181,8 +181,8 @@ const ControleGeral: React.FC = () => {
     <div className="min-h-screen bg-gray-900 p-4">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2">Controle Geral</h1>
-          <p className="text-gray-400">Gerencie todos os mini sites criados</p>
+          <h1 className="text-3xl font-bold text-white mb-2">Controle de Planos</h1>
+          <p className="text-gray-400">Gerencie todos os planos alimentares criados</p>
         </div>
 
         {/* Search */}
@@ -196,12 +196,12 @@ const ControleGeral: React.FC = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                className="w-full pl-10 pr-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-pink-500 transition-colors"
+                className="w-full pl-10 pr-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-emerald-500 transition-colors"
               />
             </div>
             <button
               onClick={handleSearch}
-              className="px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
+              className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
             >
               Pesquisar
             </button>
@@ -218,7 +218,7 @@ const ControleGeral: React.FC = () => {
         <div className="bg-gray-800 rounded-lg overflow-hidden">
           <div className="p-4 border-b border-gray-700">
             <h2 className="text-xl font-semibold text-white">
-              Mini Sites ({sites.length})
+              Planos ({sites.length})
             </h2>
           </div>
 
@@ -228,7 +228,7 @@ const ControleGeral: React.FC = () => {
             </div>
           ) : sites.length === 0 ? (
             <div className="p-8 text-center">
-              <div className="text-gray-400">Nenhum mini site encontrado</div>
+              <div className="text-gray-400">Nenhum plano encontrado</div>
             </div>
           ) : (
             <div className="divide-y divide-gray-700">
@@ -270,7 +270,7 @@ const ControleGeral: React.FC = () => {
                         <Eye size={18} />
                       </button>
                       <a
-                        href={`https://heartzu.com/${site.site_url}`}
+                        href={`https://nutrihub.com/${site.site_url}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 text-gray-400 hover:text-white transition-colors"

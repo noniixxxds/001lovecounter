@@ -15,19 +15,19 @@ const Step5Music: React.FC<StepProps> = ({ formData, updateFormData, onNext, onB
 
   return (
     <div className="form-step">
-      <h1 className="text-xl font-bold text-white mb-2">Música especial</h1>
+      <h1 className="text-xl font-bold text-white mb-2">Playlist de foco</h1>
       <p className="text-gray-300 mb-6 text-sm">
-        Cole o link de uma música do YouTube que represente esta história especial.
+        Cole o link de uma música ou playlist do YouTube para acompanhar suas refeições ou treinos.
       </p>
       
       <div className="relative mb-6">
         <Music className="absolute left-3 top-3 text-gray-400" size={18} />
         <input
           type="url"
-          placeholder="https://www.youtube.com/watch?v=..."
+          placeholder="https://www.youtube.com/watch?v=... ou .../playlist"
           value={formData.youtubeUrl}
           onChange={(e) => updateFormData({ youtubeUrl: e.target.value })}
-          className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-pink-500 transition-colors"
+          className="w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-emerald-500 transition-colors"
         />
       </div>
 
@@ -52,7 +52,7 @@ const Step5Music: React.FC<StepProps> = ({ formData, updateFormData, onNext, onB
         </button>
         <button
           onClick={onNext}
-          className="flex-1 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors text-sm"
+          className="flex-1 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm"
         >
           Próxima etapa
         </button>
