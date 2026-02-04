@@ -7,14 +7,14 @@ interface StepIndicatorProps {
 
 const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, totalSteps }) => {
   const steps = [
-    'Título',
-    'Mensagem',
-    'Data',
-    'Fotos',
-    'Música',
-    'Animação',
+    'Plano',
+    'Objetivo',
+    'Início',
+    'Refeições',
+    'Playlist',
+    'Estilo',
     'Contato',
-    'Pagamento'
+    'Assinatura'
   ];
 
   return (
@@ -22,7 +22,7 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({ currentStep, totalSteps }
       {/* Progress bar */}
       <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
         <div 
-          className="bg-pink-500 h-2 rounded-full transition-all duration-300"
+          className="bg-emerald-500 h-2 rounded-full transition-all duration-300"
           style={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
         />
       </div>

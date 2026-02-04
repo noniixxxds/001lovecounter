@@ -66,8 +66,8 @@ function CreateSite() {
       <div className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
         <div className="max-w-lg mx-auto">
           <div className="text-center mb-6">
-            <h1 className="text-2xl sm:text-3xl font-bold text-pink-500 mb-2">Love Counter</h1>
-            <p className="text-gray-300 text-sm">Crie sua página de amor personalizada</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-emerald-400 mb-2">Planner de Dieta</h1>
+            <p className="text-gray-300 text-sm">Monte seu plano alimentar com foco, constância e energia</p>
           </div>
           
           <StepIndicator currentStep={currentStep} totalSteps={steps.length} />
